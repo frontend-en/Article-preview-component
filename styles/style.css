@@ -1,0 +1,263 @@
+@font-face {
+  font-family: "Manrope Medium";
+  src: local("Manrope-Medium"), url("../fonts/Manrope-Medium.ttf") format("truetype");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Manrope Bold";
+  src: local("Manrope-SemiBold"), url("../fonts/Manrope-Bold.ttf") format("truetype");
+  font-weight: 700;
+}
+/* https://piccalil.li/blog/a-modern-css-reset */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  letter-spacing: -0.05px;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 150%;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+:root {
+  font-family: "Manrope Medium", sans-serif;
+}
+
+body {
+  background-color: #ECF2F8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.share-button {
+  margin-left: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 100%;
+}
+
+.card {
+  position: relative;
+  padding: 0 0.75rem;
+  max-width: 20.4375rem;
+}
+@media (min-width: 768px) {
+  .card {
+    display: flex;
+    max-width: 45.75rem;
+    max-height: 17.5rem;
+    padding: 0;
+  }
+}
+.card > img {
+  border-radius: 10px 10px 0 0;
+  min-height: 12.5rem;
+  min-width: 100%;
+}
+@media (min-width: 768px) {
+  .card > img {
+    width: 17.8125rem;
+    min-width: initial;
+    border-radius: 10px 0 0 10px;
+    object-fit: cover;
+    object-position: left;
+  }
+}
+.card__content {
+  background: #fff;
+  padding: clamp(2rem, 2.338rem - 0.3756vi, 2.25rem) clamp(2.25rem, 2.184rem + 0.2817vi, 2.4375rem) clamp(1.25rem, 0.9859rem + 1.1268vi, 2rem);
+  box-shadow: 0 40px 40px -10px rgba(201, 213, 225, 0.5);
+  border-radius: 0 0 10px 10px;
+}
+@media (min-width: 768px) {
+  .card__content {
+    border-radius: 0 10px 10px 0;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+.card__title {
+  font-family: "Manrope Bold";
+  font-size: clamp(1rem, 0.912rem + 0.3756vi, 1.25rem);
+  line-height: 150%;
+  letter-spacing: 0.01em;
+  color: #48556a;
+}
+@media (min-width: 768px) {
+  .card__title {
+    width: 365px;
+    line-height: 140%;
+  }
+}
+.card__text {
+  margin-top: 12px;
+  font-size: 13px;
+  line-height: 154%;
+  letter-spacing: 0.01em;
+  color: #6e8098;
+}
+.card__contacts {
+  margin-top: clamp(1.25rem, 2.2641rem - 1.1268vi, 2rem);
+  display: flex;
+  align-items: center;
+}
+.card__contacts > img {
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  margin-right: 1rem;
+}
+.card__name {
+  font-family: "Manrope Bold";
+  font-size: 13px;
+  line-height: 154%;
+  letter-spacing: 0.01em;
+  color: #48556a;
+}
+.card__year {
+  font-size: 13px;
+  line-height: 154%;
+  letter-spacing: 0.01em;
+  color: #9daec2;
+}
+.card__share {
+  min-width: 100%;
+  position: absolute;
+  bottom: 0;
+  min-width: 93%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 0 10px 10px;
+  background: #48556a;
+  padding: 1rem 2rem;
+  transition: all 300ms ease-in-out 0.2s;
+}
+@media (min-width: 768px) {
+  .card__share {
+    min-width: 20%;
+    right: -65px;
+    bottom: 80px;
+    border-radius: 10px;
+  }
+  .card__share::after {
+    content: "";
+    position: absolute;
+    top: 50px;
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 12px solid #48556a;
+  }
+}
+.card__share > span {
+  font-size: 13px;
+  line-height: 154%;
+  letter-spacing: 0.38em;
+  color: #9daec2;
+  margin-right: 1.3125rem;
+}
+.card__share img:not(:last-child) {
+  width: 20px;
+  height: 20px;
+}
+.card__social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.card__share-button-h {
+  background-color: #6E8098;
+}
+@media (min-width: 768px) {
+  .card__share-button-h {
+    display: none;
+  }
+}
+
+.hidden {
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  animation: visible;
+}/*# sourceMappingURL=style.css.map */
